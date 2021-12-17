@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlador\Met.cs" />
+    <Compile Include="Controlador\Autos.cs" />
+    <Compile Include="Controlador\Conexion.cs" />
     <Compile Include="Modelo\Autos.cs" />
     <Compile Include="Modelo\Cuadro.cs" />
     <Compile Include="Modelo\Methods.cs" />

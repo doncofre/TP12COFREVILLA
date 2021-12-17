@@ -13,15 +13,41 @@ namespace TP12_2COFRELUCAS.Modelo
         public string NModelo { get; set; }
         public string NConsesionaria { get; set; }
         public string CantPedida { get; set; }
-        public List<Modelo.Pedidos> Mod { get; set; }
-        public bool verdad2 { get; set; } = true;
+        public List<Modelo.Pedidos> ListaPedidos { get; set; }
         public Pedidos()
         {
 
         }
-        public Pedidos(string path)
+        public Pedidos(int patha)
         {
-            Mod = new List<Modelo.Pedidos>();
+            string path = Convert.ToString(patha);
+            Pedidos obj;
+            string linea;
+            string[] split = new string[3];
+            char separador = ',';
+            StreamReader Leer = new StreamReader(path);
+            linea = Leer.ReadLine();
+            while (linea !=null)
+            {
+                obj = new Pedidos();
+                split = linea.Split(separador);
+                bool verdad = Methods.DevuelveEntero(split[2]);
+                if (verdad == true)
+                {
+                    obj.NModelo = split[0];
+                    obj.NConsesionaria = split[1];
+                    obj.CantPedida = split[2];
+                    ListaPedidos.Add(obj);
+                }
+                linea = Leer.ReadLine();
+
+            }
+
+
+        }
+        /*public Pedidos(string path)
+        {
+           / Mod = new List<Modelo.Pedidos>();
             Modelo.Pedidos obj;
             string linea;
             string[] arr = new string [3];
@@ -48,7 +74,7 @@ namespace TP12_2COFRELUCAS.Modelo
 
             }
             Leer.Close();
-        }
+        }*/
 
     }
     class Stock
