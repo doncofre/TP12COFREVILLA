@@ -1,0 +1,16 @@
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\bin\Debug\TP12_2COFRELUCAS.exe.config
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\bin\Debug\TP12_2COFRELUCAS.exe
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\bin\Debug\TP12_2COFRELUCAS.pdb
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.csproj.AssemblyReference.cache
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Properties.Resources.resources
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.csproj.GenerateResource.cache
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.csproj.CoreCompileInputs.cache
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.exe
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.pdb
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Form1.resources
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Vista._01Pedidos.resources
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Vista._02Stock.resources
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Vista._03StockPiezas.resources
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Vista._04Composicion.resources
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Vista._05Modelo.resources
+C:\Users\Don Cofre\source\repos\TP12_2COFRELUCAS\TP12_2COFRELUCAS\obj\Debug\TP12_2COFRELUCAS.Vista._06Pieza.resources
