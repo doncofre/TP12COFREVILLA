@@ -16,7 +16,26 @@ namespace TP12_2COFRELUCAS.Controlador
             string path = "Pedidos.txt";
             if (File.Exists(path))
             {
-                List<Modelo.Pedidos> ListaPedidos = new List<Modelo.Pedidos>(Convert.ToInt32(path));
+                 Modelo.Pedidos Pedidos = new Modelo.Pedidos(path); // no se por que hubo error
+
+                List<Modelo.Pedidos> sublist = new List<Modelo.Pedidos>();
+                using (Modelo.DBContainer db = new Modelo.DBContainer())
+                {
+                    var oLista = from a in db.PedidosDB select a;
+                    foreach ( )
+                    
+
+
+                    foreach (Modelo.Pedidos pe in sublist)
+                    {
+                        db.Pedidos.Add(pe);
+                    }
+                }
+                    
+
+
+
+
             }
             else
             {
@@ -25,5 +44,51 @@ namespace TP12_2COFRELUCAS.Controlador
         }
 
 
+    }
+
+    class Stock
+    {
+        public Stock()
+        {
+            string path = "Stock.txt";
+            if (File.Exists(path))
+            {
+                Modelo.Stock Pedidos = new Modelo.Stock(path); // no se por que hubo error
+            }
+            else
+            {
+                MessageBox.Show("No se pudo leer el archivo Pedidos.txt");
+            }
+        }
+    }
+    class StockPiezas
+    {
+        public StockPiezas()
+        {
+            string path = "StockPiezas.txt";
+            if (File.Exists(path))
+            {
+                Modelo.StockPiezas Pedidos = new Modelo.StockPiezas(path); // no se por que hubo error
+            }
+            else
+            {
+                MessageBox.Show("No se pudo leer el archivo Pedidos.txt");
+            }
+        }
+    }
+    class Composicion
+    {
+        public Composicion()
+        {
+            string path = "Composicion.txt";
+            if (File.Exists(path))
+            {
+                Modelo.Composicion Pedidos = new Modelo.Composicion(path); // no se por que hubo error
+            }
+            else
+            {
+                MessageBox.Show("No se pudo leer el archivo Pedidos.txt");
+            }
+        }
     }
 }

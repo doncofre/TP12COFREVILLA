@@ -11,17 +11,17 @@ namespace TP12_2COFRELUCAS.Modelo
     class Pedidos
     {
         public string NModelo { get; set; }
-        public string NConsesionaria { get; set; }
+        public string NConcesionaria { get; set; }
         public string CantPedida { get; set; }
         public List<Modelo.Pedidos> ListaPedidos { get; set; }
+        public List<Modelo.Pedidos> SubLista { get; set; }
         public Pedidos()
         {
 
         }
-        public Pedidos(int patha)
+        public Pedidos(string path)
         {
-            string path = Convert.ToString(patha);
-            Pedidos obj;
+            Modelo.Pedidos obj;
             string linea;
             string[] split = new string[3];
             char separador = ',';
@@ -29,13 +29,13 @@ namespace TP12_2COFRELUCAS.Modelo
             linea = Leer.ReadLine();
             while (linea !=null)
             {
-                obj = new Pedidos();
+                obj = new Modelo.Pedidos();
                 split = linea.Split(separador);
                 bool verdad = Methods.DevuelveEntero(split[2]);
                 if (verdad == true)
                 {
                     obj.NModelo = split[0];
-                    obj.NConsesionaria = split[1];
+                    obj.NConcesionaria = split[1];
                     obj.CantPedida = split[2];
                     ListaPedidos.Add(obj);
                 }
@@ -43,8 +43,19 @@ namespace TP12_2COFRELUCAS.Modelo
 
             }
 
-
+            
         }
+
+        public List<Modelo.Pedidos> RellenarSublista()
+        {
+            using (Modelo.DBContainer db = new DBContainer())
+            {
+                var oSublista = from a in db.PedidosDB select a;
+                return oSublista.ToList();
+            }
+            
+        }
+
         /*public Pedidos(string path)
         {
            / Mod = new List<Modelo.Pedidos>();

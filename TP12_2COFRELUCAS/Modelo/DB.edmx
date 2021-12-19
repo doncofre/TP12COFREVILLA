@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DBStoreContainer">
+    <EntitySet Name="Pedidos" EntityType="DB.Store.Pedidos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stock" EntityType="DB.Store.Stock" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StockPiezas" EntityType="DB.Store.StockPiezas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Composicion" EntityType="DB.Store.Composicion" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Pedidos">
+    <Key>
+      <PropertyRef Name="NModelo" />
+    </Key>
+    <Property Name="NModelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NConcesionaria" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CantPedida" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="NroModelo" />
+    </Key>
+    <Property Name="NroModelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="stock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StockPiezas">
+    <Key>
+      <PropertyRef Name="NroPieza" />
+    </Key>
+    <Property Name="NroPieza" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Stock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Composicion">
+    <Key>
+      <PropertyRef Name="NModelo" />
+    </Key>
+    <Property Name="NModelo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NPieza" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CantUsar" Type="int" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="DBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PedidosDB" EntityType="DB.PedidosDB" />
+          <EntitySet Name="StockDB" EntityType="DB.StockDB" />
+          <EntitySet Name="StockPiezasDB" EntityType="DB.StockPiezasDB" />
+          <EntitySet Name="ComposicionDB" EntityType="DB.ComposicionDB" />
+        </EntityContainer>
+        <EntityType Name="PedidosDB">
+          <Key>
+            <PropertyRef Name="NModelo" />
+          </Key>
+          <Property Name="NModelo" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="NConcesionaria" Type="String" Nullable="false" />
+          <Property Name="CantPedida" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StockDB">
+          <Key>
+            <PropertyRef Name="NroModelo" />
+          </Key>
+          <Property Name="NroModelo" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="stock" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StockPiezasDB">
+          <Key>
+            <PropertyRef Name="NroPieza" />
+          </Key>
+          <Property Name="NroPieza" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="Stock" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ComposicionDB">
+          <Key>
+            <PropertyRef Name="NModelo" />
+          </Key>
+          <Property Name="NModelo" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="NPieza" Type="String" Nullable="false" />
+          <Property Name="CantUsar" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBStoreContainer" CdmEntityContainer="DBContainer">
+    <EntitySetMapping Name="PedidosDB">
+      <EntityTypeMapping TypeName="IsTypeOf(DB.PedidosDB)">
+        <MappingFragment StoreEntitySet="Pedidos">
+          <ScalarProperty Name="NModelo" ColumnName="NModelo" />
+          <ScalarProperty Name="NConcesionaria" ColumnName="NConcesionaria" />
+          <ScalarProperty Name="CantPedida" ColumnName="CantPedida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockDB">
+      <EntityTypeMapping TypeName="IsTypeOf(DB.StockDB)">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="NroModelo" ColumnName="NroModelo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockPiezasDB">
+      <EntityTypeMapping TypeName="IsTypeOf(DB.StockPiezasDB)">
+        <MappingFragment StoreEntitySet="StockPiezas">
+          <ScalarProperty Name="NroPieza" ColumnName="NroPieza" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComposicionDB">
+      <EntityTypeMapping TypeName="IsTypeOf(DB.ComposicionDB)">
+        <MappingFragment StoreEntitySet="Composicion">
+          <ScalarProperty Name="NModelo" ColumnName="NModelo" />
+          <ScalarProperty Name="NPieza" ColumnName="NPieza" />
+          <ScalarProperty Name="CantUsar" ColumnName="CantUsar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
